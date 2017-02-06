@@ -1,3 +1,13 @@
-bin
-var
-vendor
+.DS_Store
+.DS_Store?
+/var
+/app/config/parameters.yml
+/build/
+/phpunit.xml
+/vendor/
+/web/bundles/
+/bin/*
+!/bin/console
+!/bin/symfony_requirements
+.idea/
+nbproject
