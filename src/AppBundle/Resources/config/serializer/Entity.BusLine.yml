@@ -1,0 +1,37 @@
+AppBundle\Entity\BusLine:
+    exclusion_policy: None
+
+Telosys\Domain\Entity\BusLine:
+    exclusion_policy: None
+    properties:
+        id:
+            groups: [busline]
+        commercialSense:
+            groups: [busline]
+        fullLabel:
+            groups: [busline]
+        code:
+            groups: [busline]
+        shortName:
+            groups: [busline]
+        lineId:
+            groups: [busline]
+        departureStartPointName:
+            groups: [busline]
+        arriveStopPointName:
+            groups: [busline]
+        departureStartPointId:
+            groups: [busline]
+        arriveStopPointId:
+            groups: [busline]
+        internalId:
+            groups: [busline]
+        type:
+            groups: [busline]
+        isAccessibleForDisabledPersons:
+            groups: [busline]
+        recordId:
+            groups: [busline]
+        coordinates:
+            groups: [busline]
+            

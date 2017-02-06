@@ -1,0 +1,104 @@
+<?php
+
+namespace Telosys\Domain\Service;
+
+use AppBundle\Repository\BusLineRepository;
+use Psr\Log\LoggerInterface;
+use Psr\Log\NullLogger;
+use AppBundle\Repository\RennesMetropoleOpenDataRepository;
+use AppBundle\Repository\BusLineStopsCoordinatesRepository;
+
+class BusLineService
+{
+    /**
+     * @var \AppBundle\Repository\BusLineRepository
+     */
+    protected $repository;
+    
+    /**
+     * @var LoggerInterface
+     */
+    protected $logger;
+    
+    /**
+     * @var \AppBundle\Repository\RennesMetropoleOpenDataRepository
+     */
+    protected $rennesMetropoleOpenDataRepository;
+    
+    /**
+     * @var \AppBundle\Repository\BusLineStopsCoordinatesRepository
+     */
+    protected $busLineStopsCoordinatesRepository;
+
+    /**
+     *
+     * @param BusLineRepository $busLineRepository
+     * @param LoggerInterface $logger
+     * @param RennesMetropoleOpenDataRepository $rennesMetropoleOpenDataRepository
+     * @param BusLineStopsCoordinatesRepository $busLineStopsCoordinatesRepository
+     *
+     */
+    public function __construct(
+        BusLineRepository $busLineRepository,
+        LoggerInterface $logger = null,
+        RennesMetropoleOpenDataRepository $rennesMetropoleOpenDataRepository,
+        BusLineStopsCoordinatesRepository $busLineStopsCoordinatesRepository
+    ) {
+        $this->busLineRepository = $busLineRepository;
+        $this->logger = $logger ?: new NullLogger();
+        $this->rennesMetropoleOpenDataRepository = $rennesMetropoleOpenDataRepository;
+        $this->busLineStopsCoordinatesRepository = $busLineStopsCoordinatesRepository;
+    }   
+    
+    /**
+     *
+     * @return array
+     */
+    public function getBusLineList()
+    {
+        $busLines = $this->busLineRepository->findAll();
+        $this->hydrateBusLines($busLines);
+        
+        return $busLines;
+    }
+    
+    /**
+     *
+     * @return array
+     *
+     */
+    public function pullBuslineData()
+    {
+        return json_decode($this->rennesMetropoleOpenDataRepository->findAll()->getContents());
+    }
+    
+    /**
+     *
+     * @return array
+     */
+    public function findByShortName($name)
+    {
+        return $this->busLineRepository->findByShortName($name);
+    }
+    
+    /**
+     *
+     * @return array
+     */
+    public function findByShortNameAndCommercialSense($name, $sense)
+    {
+        return $this->busLineRepository->findByShortNameAndCommercialSense($name, $sense);
+    }
+    
+    /**
+     *
+     * @return array
+     */
+    protected function hydrateBusLines($buslines)
+    {
+        foreach($buslines as $busline) {
+            $coordinates = $this->busLineStopsCoordinatesRepository->findOneBy(array('code' => $busline->getCode()));
+            $busline->setCoordinates(array("data_from_mongo" => $coordinates->getCode()));
+        }
+    }
+}

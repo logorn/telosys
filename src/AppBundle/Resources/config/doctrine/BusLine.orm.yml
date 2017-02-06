@@ -1,0 +1,65 @@
+AppBundle\Entity\BusLine:
+    type: entity
+    table: bus_line
+    repositoryClass: AppBundle\Repository\BusLineRepository
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        commercialSense:
+            type: string
+            length: 255
+            nullable: true
+        fullLabel:
+            type: string
+            length: 255
+            nullable: true
+        code:
+            type: string
+            length: 255
+            nullable: true
+        shortName:
+            type: string
+            length: 255
+            nullable: true
+        lineId:
+            type: string
+            length: 255
+            nullable: true
+        departureStartPointName:
+            type: string
+            length: 255
+            nullable: true
+        arriveStopPointName:
+            type: string
+            length: 255
+            nullable: true
+        departureStartPointId:
+            type: string
+            length: 255
+            nullable: true
+        arriveStopPointId:
+            type: string
+            length: 255
+            nullable: true
+        internalId:
+            type: string
+            length: 255
+            nullable: true
+        type:
+            type: string
+            length: 255
+            nullable: true
+        isAccessibleForDisabledPersons:
+            type: boolean
+            options:
+                default: 0
+        recordId:
+            type: string
+            length: 255
+            nullable: true
+            
+    uniqueConstraints:
+        busline_code_unique:
+          columns: [ code ]

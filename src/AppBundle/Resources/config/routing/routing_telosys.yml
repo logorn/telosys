@@ -1,0 +1,4 @@
+app_telosys:
+    resource: "@AppBundle/Controller/Telosys/Project/"
+    type: annotation
+    prefix: telosys/v1.0/

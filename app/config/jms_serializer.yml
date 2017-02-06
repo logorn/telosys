@@ -1,0 +1,14 @@
+parameters:
+    jms_serializer.camel_case_naming_strategy.class: JMS\Serializer\Naming\IdenticalPropertyNamingStrategy
+
+jms_serializer:
+    handlers:
+        datetime:
+            default_format: "c" # ISO8601
+            default_timezone: "UTC" # defaults to whatever timezone set in php.ini or via date_default_timezone_set
+    metadata:
+        auto_detection: true
+        directories:
+            telosys:
+                namespace_prefix: "Telosys\\Domain"
+                path: "@AppBundle/Resources/config/serializer"
