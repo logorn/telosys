@@ -16,7 +16,7 @@ class CheckController extends Controller
      * @Rest\Get("/projects/pings")
      * @Rest\View(statusCode=Response::HTTP_OK)
      */
-    public function getProjectsPingsAction(Request $request)
+    public function getProjectsPingsAction()
     {
         return [
             "message" => "pong"

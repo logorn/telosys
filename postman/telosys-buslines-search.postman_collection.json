@@ -1,0 +1,22 @@
+{
+	"variables": [],
+	"info": {
+		"name": "telosys-buslines-search",
+		"_postman_id": "69ba20e7-761e-904b-66d9-a137b3c1201b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://devstack.local/api/platform/telosys/v1.0/projects/search/buslines/0050-A-3301-1563",
+			"request": {
+				"url": "http://devstack.local/api/platform/telosys/v1.0/projects/search/buslines/0050-A-3301-1563",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

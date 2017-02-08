@@ -9,9 +9,6 @@ jms_serializer:
     metadata:
         auto_detection: true
         directories:
-            entity.common:
-                namespace_prefix: "AppBundle\\Entity\\Common"
-                path: "@AppBundle/Resources/config/serializer/common"
             telosys:
                 namespace_prefix: "Telosys\\Domain"
                 path: "@AppBundle/Resources/config/serializer"

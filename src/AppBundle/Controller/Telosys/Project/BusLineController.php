@@ -17,8 +17,30 @@ class BusLineController extends Controller
      * @Rest\View(serializerGroups={"busline"}, statusCode=Response::HTTP_OK)
      * 
      */
-    public function getProjectsBusLinesAction(Request $request)
+    public function getProjectsBusLinesAction()
     {
         return $this->get('busline_service')->getBusLineList();
+    }
+    
+    /**
+     *
+     * @Rest\Get("/projects/buslines/{name}")
+     * @Rest\View(serializerGroups={"busline"}, statusCode=Response::HTTP_OK)
+     * 
+     */
+    public function getProjectsBusLinesNameAction($name)
+    {
+        return $this->get('busline_service')->findByShortName($name);
+    }
+    
+    /**
+     *
+     * @Rest\Get("/projects/buslines/{name}/sense/{sense}")
+     * @Rest\View(serializerGroups={"busline"}, statusCode=Response::HTTP_OK)
+     * 
+     */
+    public function getProjectsBusLinesNameCommercialSenseAction($name, $sense)
+    {
+        return $this->get('busline_service')->findByShortNameAndCommercialSense($name, $sense);
     }
 }

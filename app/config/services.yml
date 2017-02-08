@@ -1,19 +1,6 @@
 parameters:
+    
+imports:
+    - { resource: telosys_services.yml}
 
-services:    
-    busline_service:
-        class: Telosys\Domain\Service\BusLineService
-        arguments: ['@busline_repository', '@logger', '@rennes_metropole_open_data_repository']
-        
-    busline_repository:
-        class: AppBundle\Repository\BusLineRepository
-        factory : ['@doctrine.orm.entity_manager', getRepository]
-        arguments: ['AppBundle:BusLine']
-        
-    rennes_metropole_open_data_repository:
-        class: AppBundle\Repository\RennesMetropoleOpenDataRepository
-        arguments: ['@rennes_metropole_api_request']
-        
-    rennes_metropole_api_request:
-        class: Component\ApiComponent\RennesMetropoleApiRequest
-        arguments: ['%api_end_point%']    
+services:
