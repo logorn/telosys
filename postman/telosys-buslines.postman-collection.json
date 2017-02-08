@@ -1,0 +1,44 @@
+{
+	"variables": [],
+	"info": {
+		"name": "telosys-buslines",
+		"_postman_id": "bf55dcdc-658b-09d9-fa26-9ff9481214a0",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://devstack.local/api/platform/telosys/v1.0/projects/buslines/c2",
+			"request": {
+				"url": "http://devstack.local/api/platform/telosys/v1.0/projects/buslines/c2",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "get bus lines by short name"
+			},
+			"response": []
+		},
+		{
+			"name": "http://devstack.local/api/platform/telosys/v1.0/projects/buslines",
+			"request": {
+				"url": "http://devstack.local/api/platform/telosys/v1.0/projects/buslines",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "get all bus lines"
+			},
+			"response": []
+		},
+		{
+			"name": "http://devstack.local/api/platform/telosys/v1.0/projects/buslines/c2/sense/retour",
+			"request": {
+				"url": "http://devstack.local/api/platform/telosys/v1.0/projects/buslines/c2/sense/retour",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "get bus lines by short name and sense"
+			},
+			"response": []
+		}
+	]
+}

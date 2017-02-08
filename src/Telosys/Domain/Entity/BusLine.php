@@ -75,6 +75,11 @@ class BusLine
     protected $recordId;
     
     /**
+     * @var array
+     */ 
+    protected $coordinates;
+    
+    /**
      *
      * @return integer
      */
@@ -352,7 +357,28 @@ class BusLine
     {
         $this->recordId = $recordId;
         return $this;
+    }
+    
+    /**
+     *
+     * @param array
+     * 
+     */
+    public function getCoordinates()
+    {
+        return $this->coordinates;
     }    
+    
+    /**
+     *
+     * @param array $coordinates
+     * @return BusLine
+     */
+    public function setCoordinates(array $coordinates)
+    {
+        $this->coordinates = $coordinates;
+        return $this;
+    }
     
     public function toArray()
     {

@@ -1,0 +1,35 @@
+AppBundle\Entity\Client:
+    exclusion_policy: None
+
+Telosys\Domain\Entity\Client:
+    exclusion_policy: None
+    properties:
+        id:
+            groups: [client]
+        initiationDate:
+            groups: [client]
+        terminal:
+            groups: [client]
+        session:
+            groups: [client]
+        agent:
+            groups: [client]
+        card:
+            groups: [client]
+        carrierNumber:
+            groups: [client]
+        carrierName:
+            groups: [client]
+        carrierFirstName:
+            groups: [client]
+        carrierAddress:
+            groups: [client]
+        carrierPostalCode:
+            groups: [client]
+        carrierTown:
+            groups: [client]
+        carrierContractNumber:
+            groups: [client]
+        transactionId:
+            groups: [client]         
+       

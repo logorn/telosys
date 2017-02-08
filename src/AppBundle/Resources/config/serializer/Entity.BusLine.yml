@@ -32,4 +32,6 @@ Telosys\Domain\Entity\BusLine:
             groups: [busline]
         recordId:
             groups: [busline]
+        coordinates:
+            groups: [busline]
             

@@ -9,17 +9,16 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use \Symfony\Component\HttpFoundation\Request;
 
-class CheckController extends Controller
+class BusLineSearchController extends Controller
 {
     /**
      *
-     * @Rest\Get("/projects/pings")
+     * @Rest\Get("/projects/search/buslines/{code}")
      * @Rest\View(statusCode=Response::HTTP_OK)
+     * 
      */
-    public function getProjectsPingsAction()
+    public function getProjectsSearchBusLinesCodeAction($code)
     {
-        return [
-            "message" => "pong"
-        ];
+        return $this->get('busline_search_service')->getBusLineByCode($code);
     }
 }
