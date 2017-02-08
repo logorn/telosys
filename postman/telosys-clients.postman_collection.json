@@ -1,0 +1,73 @@
+{
+	"variables": [],
+	"info": {
+		"name": "telosys-clients",
+		"_postman_id": "de679e08-f3ac-be94-d397-0bd24af99ae7",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://devstack.local/api/platform/telosys/v1.0/projects/clients",
+			"request": {
+				"url": "http://devstack.local/api/platform/telosys/v1.0/projects/clients",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "get all clients"
+			},
+			"response": []
+		},
+		{
+			"name": "http://devstack.local/api/platform/telosys/v1.0/projects/clients",
+			"request": {
+				"url": "http://devstack.local/api/platform/telosys/v1.0/projects/clients",
+				"method": "POST",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"carrierNumber\": \"carrierNumber1\",\n\t\"carrierName\": \"carrierName2\",\n\t\"carrierFirstName\": \"carrierFirstName3\",\n\t\"carrierAddress\": \"carrierAddress4\",\n\t\"carrierPostalCode\": \"carrierPostalCode5\",\n\t\"carrierTown\": \"carrierTown6\"\n}"
+				},
+				"description": "create a client"
+			},
+			"response": []
+		},
+		{
+			"name": "http://devstack.local/api/platform/telosys/v1.0/projects/clients",
+			"request": {
+				"url": "http://devstack.local/api/platform/telosys/v1.0/projects/clients/58a58da09bd59",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": "delete client by carrierContractNumber"
+			},
+			"response": []
+		},
+		{
+			"name": "http://devstack.local/api/platform/telosys/v1.0/projects/clients",
+			"request": {
+				"url": "http://devstack.local/api/platform/telosys/v1.0/projects/clients/1001",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 1001,\n  \"initiationDate\": \"2017-02-16T06:22:19-06:00\",\n  \"terminal\": 1,\n  \"session\": \"58a5997b9b51e\",\n  \"agent\": 11,\n  \"card\": \"58a5997b9b56f\",\n  \"carrierNumber\": null,\n  \"carrierName\": \"carrierName2\",\n  \"carrierFirstName\": \"carrierFirstName3\",\n  \"carrierAddress\": \"lom\",\n  \"carrierPostalCode\": \"carrierPostalCode5\",\n  \"carrierTown\": \"carrierTown6\",\n  \"carrierContractNumber\": \"58a5997b9b5ba\",\n  \"transactionId\": \"945cc4706c01f615477cf65aebb5c429\"\n}"
+				},
+				"description": "update a client"
+			},
+			"response": []
+		}
+	]
+}

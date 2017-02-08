@@ -1,0 +1,57 @@
+parameters:
+
+services:    
+    busline_service:
+        class: Telosys\Domain\Service\BusLineService
+        arguments: ['@busline_repository', '@logger', '@rennes_metropole_open_data_repository', '@bus_line_stops_coordinates_repository']
+        
+    busline_search_service:
+        class: Telosys\Domain\Service\BusLineSearchService
+        arguments: ['@elastic_search_storages_bus_line_storage', '@elastic_search_indexes_bus_line_index', '@elastic_search_storages_bus_line_query', '@logger']        
+
+    client_service:
+        class: Telosys\Domain\Service\ClientService
+        arguments: ['@client_repository', '@logger']
+
+    busline_repository:
+        class: AppBundle\Repository\BusLineRepository
+        factory : ['@doctrine.orm.entity_manager', getRepository]
+        arguments: ['AppBundle:BusLine']
+        
+    rennes_metropole_open_data_repository:
+        class: AppBundle\Repository\RennesMetropoleOpenDataRepository
+        arguments: ['@rennes_metropole_api_request']
+        
+    rennes_metropole_api_request:
+        class: Component\ApiComponent\RennesMetropoleApiRequest
+        arguments: ['%api_end_point%']
+        
+    bus_line_stops_coordinates_repository:
+        class: AppBundle\Repository\BusLineStopsCoordinatesRepository
+        factory: ['@doctrine_mongodb', getRepository]
+        arguments: ["AppBundle:BusLineStopsCoordinates"]
+
+    client_repository:
+        class: AppBundle\Repository\ClientRepository
+        factory : ['@doctrine.orm.entity_manager', getRepository]
+        arguments: ['AppBundle:Client']
+
+    component_search_elastic_search:
+        class: Component\Search\ElasticSearch
+        arguments: ['%elasticsearcher%', '@logger']
+
+    search_manager:
+        class: AppBundle\Search\SearchManager
+        arguments: ["@component_search_elastic_search", "@logger"]
+        
+    elastic_search_indexes_bus_line_index:
+        class: AppBundle\Repository\ElasticSearch\Indexes\BusLineIndex
+        arguments: ["@search_manager"]
+        
+    elastic_search_storages_bus_line_storage:
+        class: AppBundle\Repository\ElasticSearch\Storages\BusLineStorage
+        arguments: ["@search_manager"]
+        
+    elastic_search_storages_bus_line_query:
+        class: AppBundle\Repository\ElasticSearch\Queries\BusLineQuery
+        arguments: ["@search_manager"]

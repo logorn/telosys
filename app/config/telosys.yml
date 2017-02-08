@@ -1,2 +1,11 @@
 parameters:
+    
     api_end_point: "https://data.rennesmetropole.fr/api/records/1.0/search/?"
+    
+    elasticsearcher:
+        retries: 2
+        clients:
+            default: { scheme: http, host: 127.0.0.1, port: 9200 }
+        logger:
+            file: "var/logs/elasticsearch.log"
+            name: "elasticsearch"
