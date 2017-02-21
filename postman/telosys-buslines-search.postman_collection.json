@@ -17,6 +17,39 @@
 				"description": ""
 			},
 			"response": []
+		},
+		{
+			"name": "http://devstack.local/api/platform/telosys/v1.0/projects/search/buslines/0050-A-3301-1563",
+			"request": {
+				"url": "http://devstack.local/api/platform/telosys/v1.0/projects/search/buslines/global/20b8f986376f69a6accb5a0ffe18754363e93277",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://devstack.local/api/platform/telosys/v1.0/projects/search/buslines/0050-A-3301-1563",
+			"request": {
+				"url": "http://devstack.local/api/platform/telosys/v1.0/projects/search/buslines",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://devstack.local/api/platform/telosys/v1.0/projects/search/buslines/0050-A-3301-1563",
+			"request": {
+				"url": "http://devstack.local/api/platform/telosys/v1.0/projects/search/buslines/global/b397addd97a43d78b6c9ed8267c0e339ff239f49/alternative",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
 		}
 	]
 }

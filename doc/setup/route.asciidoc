@@ -1,0 +1,31 @@
+== Application Route
+
+    Bus Line
+
+    app_telosys_project_check_getprojectspings                                                 GET      ANY      ANY    /api/platform/telosys/v1.0/projects/pings
+  
+    app_telosys_project_busline_getprojectsbuslines                                            GET      ANY      ANY    /api/platform/telosys/v1.0/projects/buslines
+    
+    app_telosys_project_busline_getprojectsbuslinesname                                        GET      ANY      ANY    /api/platform/telosys/v1.0/projects/buslines/{name}
+    
+    app_telosys_project_busline_getprojectsbuslinesnamecommercialsense                         GET      ANY      ANY    /api/platform/telosys/v1.0/projects/buslines/{name}/sense/{sense}
+  
+    Client
+  
+    app_telosys_project_client_getprojectsclients                                              GET      ANY      ANY    /api/platform/telosys/v1.0/projects/clients
+    
+    app_telosys_project_client_postprojectsclients                                             POST     ANY      ANY    /api/platform/telosys/v1.0/projects/clients
+    
+    app_telosys_project_client_deleteprojectsclients                                           DELETE   ANY      ANY    /api/platform/telosys/v1.0/projects/clients/{id}
+    
+    app_telosys_project_client_putprojectsclients                                              PUT      ANY      ANY    /api/platform/telosys/v1.0/projects/clients/{id}
+  
+    Search
+  
+    app_telosys_project_buslinesearch_getprojectssearchbuslinescode                            GET      ANY      ANY    /api/platform/telosys/v1.0/projects/search/buslines/{code}
+    
+    app_telosys_project_buslinesearch_getprojectssearchbuslinesglobalcontent                   GET      ANY      ANY    /api/platform/telosys/v1.0/projects/search/buslines/global/{content}
+    
+    app_telosys_project_buslinesearch_getprojectssearchbuslinesglobalcontentalternativection   GET      ANY      ANY    /api/platform/telosys/v1.0/projects/search/buslines/global/{content}/alternative
+    
+    app_telosys_project_buslinesearch_getprojectssearchbuslines                                GET      ANY      ANY    /api/platform/telosys/v1.0/projects/search/buslines

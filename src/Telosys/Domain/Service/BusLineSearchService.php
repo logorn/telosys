@@ -90,6 +90,16 @@ class BusLineSearchService
     {
         return $this->busLineQuery->getBusLineMatchAll($content);
     }
+    
+    /**
+     *
+     * @param string $content
+     *
+     */     
+    public function getBusLineQueryString($content)
+    {    
+        return $this->busLineQuery->getBusLineQueryString($content);
+    }
       
     public function getBusLineAll()
     {

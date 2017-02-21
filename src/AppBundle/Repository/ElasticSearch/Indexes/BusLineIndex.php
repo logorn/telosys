@@ -42,37 +42,38 @@ class BusLineIndex extends ElasticSearchIndexBase implements ElasticSearchIndex
 			],
 			"mappings" => [
 				"busline" => [
-					"_source" => ["enabled" => True],
+					"_source" => ["enabled" => true],
+					"_all" => ["enabled" => true],
 					"properties" => [
 						"id" => [ "type" => "string", "index" => "not_analyzed"],
-						"commercialSense" => [ "type" => "string", "index" => "not_analyzed"],
-						"fullLabel" => [ "type" => "string", "index" => "not_analyzed"],
-						"code" => [ "type" => "string", "index" => "not_analyzed"],
-						"shortName" => [ "type" => "string", "index" => "not_analyzed"],
-						"lineId" => [ "type" => "string", "index" => "not_analyzed"],
-						"departureStartPointName" => [ "type" => "string", "index" => "not_analyzed"],
-						"arriveStopPointName" => [ "type" => "string", "index" => "not_analyzed"],
-						"departureStartPointId" => [ "type" => "string", "index" => "not_analyzed"],
-						"arriveStopPointId" => [ "type" => "string", "index" => "not_analyzed"],
-						"internalId" => [ "type" => "string", "index" => "not_analyzed"],
-						"type" => [ "type" => "string", "index" => "not_analyzed"],
-						"isAccessibleForDisabledPersons" => [ "type" => "string", "index" => "not_analyzed"],
-						"recordId" => [ "type" => "string", "index" => "not_analyzed"],
+						"commercialSense" => [ "type" => "string", "index" => "not_analyzed", "store"=> true],
+						"fullLabel" => [ "type" => "string", "index" => "not_analyzed", "store"=> true],
+						"code" => [ "type" => "string", "index" => "not_analyzed", "store"=> true],
+						"shortName" => [ "type" => "string", "index" => "not_analyzed", "store"=> true],
+						"lineId" => [ "type" => "string", "index" => "not_analyzed", "store"=> true],
+						"departureStartPointName" => [ "type" => "string", "index" => "not_analyzed", "store"=> true],
+						"arriveStopPointName" => [ "type" => "string", "index" => "not_analyzed", "store"=> true],
+						"departureStartPointId" => [ "type" => "string", "index" => "not_analyzed", "store"=> true],
+						"arriveStopPointId" => [ "type" => "string", "index" => "not_analyzed", "store"=> true],
+						"internalId" => [ "type" => "string", "index" => "not_analyzed", "store"=> true],
+						"type" => [ "type" => "string", "index" => "not_analyzed", "store"=> true],
+						"isAccessibleForDisabledPersons" => [ "type" => "string", "index" => "not_analyzed", "store"=> true],
+						"recordId" => [ "type" => "string", "index" => "not_analyzed", "store"=> true],
 						"coordinates" => [
 							"properties" => [
 								"geometry" => [
 									"properties" => [
-										"type" => [ "type" => "string", "index" => "not_analyzed"],
-										"coordinates" => [ "type" => "double", "index" => "not_analyzed"],
+										"type" => [ "type" => "string", "index" => "not_analyzed", "store"=> true],
+										"coordinates" => [ "type" => "double", "index" => "not_analyzed", "store"=> true],
 									]
 								],
 								"course" => [
 									"properties" => [
-										"type" => [ "type" => "string", "index" => "not_analyzed"],
-										"coordinates" => [ "type" => "double", "index" => "not_analyzed"],
+										"type" => [ "type" => "string", "index" => "not_analyzed", "store"=> true],
+										"coordinates" => [ "type" => "double", "index" => "not_analyzed", "store"=> true],
 									]
 								],
-								"getGeoPoint2d" => [ "type" => "double", "index" => "not_analyzed"],
+								"getGeoPoint2d" => [ "type" => "double", "index" => "not_analyzed", "store"=> true],
 							],
 						]
 					],

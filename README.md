@@ -89,6 +89,28 @@ Response body with http:
         }
     ]
 
+## Technologies
+
+The technologies used for this api application are:
+
+- Symfony 3 as main application framework.
+- Doctrine Orm 2.
+- Doctrine Odm
+- Jms serializer
+- Fos rest-bundle
+- Nelmio cors
+- Guzzle client
+- MongoDb
+- MySql
+
+## Postman
+
+You have API calls by operating postman.
+
+## Update Schema and populate data
+
+No need to detail them because known of any good developer of symfony.
+
 ## Author Information
 
 This application was created in 2017 by Hugues MAILLET, inspired by the work of many.

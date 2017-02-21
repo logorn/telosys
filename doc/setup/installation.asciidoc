@@ -1,0 +1,25 @@
+== Installation
+
+doctrine
+
+    php bin/console doctrine:database:create
+    
+    php bin/console doctrine:schema:create
+
+mongodb
+
+    php bin/console doctrine:mongodb:schema:create
+    
+In order to have data to test the application, you need to execute the commands below.
+
+Get the list of bus lines and feed the mysql and mongo databases
+
+    php bin/console telosys:busline:update
+    
+Populate the client table with fictitious data
+
+    php bin/console telosys:client:load
+    
+Populate elasticsearch with list of bus lines
+
+    php bin/console telosys:elasticsearch:load
