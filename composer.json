@@ -32,7 +32,10 @@
         "doctrine/mongodb": "^1.4",
         "doctrine/mongodb-odm-bundle": "^3.2",
         "doesntmattr/mongodb-migrations-bundle": "^1.1",
-        "nelmio/cors-bundle": "1.5.1"
+        "nelmio/cors-bundle": "^1.5",
+        "doctrine/data-fixtures": "^1.2",
+        "doctrine/doctrine-fixtures-bundle": "^2.3",
+        "elasticsearch/elasticsearch": "^5.1"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
@@ -43,7 +46,8 @@
         "phpmd/phpmd": "^2.4",
         "sebastian/phpcpd": "^2.0",
         "phploc/phploc": "^3.0",
-        "phing/phing": "^2.0"
+        "phing/phing": "^2.0",
+        "vipsoft/doctrine-data-fixtures-extension": "^3.3"
     },   
     "scripts": {
         "symfony-scripts": [

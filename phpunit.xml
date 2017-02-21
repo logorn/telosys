@@ -24,13 +24,22 @@
     </testsuites>
 
     <filter>
-        <whitelist>
+        <whitelist addUncoveredFilesFromWhitelist="true">
             <directory>src</directory>
             <exclude>
-                <directory>src/*Bundle/Resources</directory>
-                <directory>src/*/*Bundle/Resources</directory>
-                <directory>src/*/*Bundle/Repository</directory>
-                <directory>src/*/Bundle/*Bundle/Resources</directory>
+                <directory>./src/Component</directory>
+                <directory>./src/AppBundle/Entity</directory>
+                <directory>./src/AppBundle/Document</directory>
+                <directory>./src/AppBundle/Resources</directory>
+                <directory>./src/AppBundle/Repository</directory>
+                <directory>./src/AppBundle/Tests</directory>
+                <directory>./src/AppBundle/Controller</directory>
+                <directory>./src/AppBundle/DependencyInjection</directory>
+                <directory>./src/AppBundle/Form</directory>
+                <directory>./src/Telosys/Domain/Document</directory>
+                <directory>./src/Telosys/Domain/Entity</directory>
+                <directory>./src/Telosys/Domain/Repository</directory>
+                <file>./src/AppBundle/AppBundle.php</file>
             </exclude>
         </whitelist>
     </filter>

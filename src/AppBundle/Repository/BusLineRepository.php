@@ -1,4 +1,5 @@
 <?php
+
 namespace AppBundle\Repository;
 
 use Telosys\Domain\Repository;

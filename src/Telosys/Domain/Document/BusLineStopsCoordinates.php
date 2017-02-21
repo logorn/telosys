@@ -28,6 +28,30 @@ class BusLineStopsCoordinates
      * @Assert\NotBlank()
      */      
     protected $recordId;
+    
+    /**
+     * @var array
+     * @MongoDB\Field(type="hash")
+     * @MongoDB\Index
+     * @Assert\NotBlank()
+     */ 
+    protected $course;
+    
+    /**
+     * @var array
+     * @MongoDB\Field(type="hash")
+     * @MongoDB\Index
+     * @Assert\NotBlank()
+     */     
+    protected $geoPoint2d;
+    
+    /**
+     * @var array
+     * @MongoDB\Field(type="hash")
+     * @MongoDB\Index
+     * @Assert\NotBlank()
+     */     
+    protected $geometry;
  
     /**
      * @return string
@@ -82,6 +106,66 @@ class BusLineStopsCoordinates
     public function setRecordId($recordId)
     {
         $this->recordId = $recordId;
+        return $this;
+    }
+    
+    /**
+     *
+     * @return array
+     */
+    public function getCourse()
+    {
+        return $this->course;
+    }
+
+    /**
+     *
+     * @param array $course
+     * @return BusStopsCoordinates
+     */
+    public function setCourse($course)
+    {
+        $this->course = $course;
+        return $this;
+    }
+    
+    /**
+     *
+     * @return array
+     */
+    public function getGeoPoint2d()
+    {
+        return $this->geoPoint2d;
+    }
+    
+    /**
+     *
+     * @param array $geoPoint2d
+     * @return BusStopsCoordinates
+     */    
+    public function setGeoPoint2d($geoPoint2d)
+    {
+        $this->geoPoint2d = $geoPoint2d;
+        return $this;
+    }
+    
+    /**
+     *
+     * @return array
+     */
+    public function getGeometry()
+    {
+        return $this->geometry;
+    }
+    
+    /**
+     *
+     * @param array $geometry
+     * @return BusStopsCoordinates
+     */    
+    public function setGeometry($geometry)
+    {
+        $this->geometry = $geometry;
         return $this;
     }
 }

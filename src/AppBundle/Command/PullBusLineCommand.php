@@ -121,6 +121,18 @@ class PullBusLineCommand extends ContainerAwareCommand
         $busLineStopsCoordinates->setCode($result->fields->code);
         $busLineStopsCoordinates->setRecordId($result->recordid);
         
+        if (property_exists($result->fields, "parcours")) {
+            $busLineStopsCoordinates->setCourse((array) $result->fields->parcours);
+        }
+        
+        if (property_exists($result->fields, "geo_point_2d")) {
+            $busLineStopsCoordinates->setGeoPoint2d($result->fields->geo_point_2d);
+        }
+        
+        if (property_exists($result, "geometry")) {
+            $busLineStopsCoordinates->setGeometry((array) $result->geometry);
+        }
+        
         return $busLineStopsCoordinates;
     }
     

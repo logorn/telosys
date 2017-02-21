@@ -10,9 +10,9 @@ class Client
     protected $id;
     
      /**
-     * @var date
+     * @var datetime
      */     
-    protected $purchaseDate;
+    protected $initiationDate;
     
      /**
      * @var integer
@@ -96,20 +96,20 @@ class Client
     
     /**
      *
-     * @return date
+     * @return datetime
      */
-    public function getPurchaseDate()
+    public function getInitiationDate()
     {
-        return $this->purchaseDate;
+        return $this->initiationDate;
     }
     
     /**
-     * @param integer $purchaseDate
+     * @param datetime $initiationDate
      * @return Client
      */
-    public function setPurchaseDate($purchaseDate)
+    public function setInitiationDate($initiationDate)
     {
-        $this->purchaseDate = $purchaseDate;
+        $this->initiationDate = $initiationDate;
         return $this;
     }
 
@@ -200,6 +200,7 @@ class Client
      */ 
     public function setCarrierNumber($carrierNumber)
     {
+        $this->carrierNumber = $carrierNumber;
         return $this;
     }
     

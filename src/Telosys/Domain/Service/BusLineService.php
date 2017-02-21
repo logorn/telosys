@@ -97,8 +97,17 @@ class BusLineService
     protected function hydrateBusLines($buslines)
     {
         foreach($buslines as $busline) {
+            // populate with coordinates
             $coordinates = $this->busLineStopsCoordinatesRepository->findOneBy(array('code' => $busline->getCode()));
-            $busline->setCoordinates(array("data_from_mongo" => $coordinates->getCode()));
+            if ($coordinates) {
+                $busline->setCoordinates(
+                    [
+                        "geometry"      => $coordinates->getGeometry(),
+                        "course"        => $coordinates->getCourse(),
+                        "getGeoPoint2d" => $coordinates->getGeoPoint2d(),
+                    ]
+                );
+            }
         }
     }
 }

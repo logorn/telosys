@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="Extranet Rules">
+    <description>Numergy coding standards</description>
+
+    <rule ref="PSR1" />
+    <rule ref="PSR2" />
+
+    <rule ref="PSR1.Classes.ClassDeclaration.MissingNamespace">
+        <exclude-pattern>app/AppKernel.php</exclude-pattern>
+        <exclude-pattern>app/AppCache.php</exclude-pattern>
+    </rule>
+</ruleset>

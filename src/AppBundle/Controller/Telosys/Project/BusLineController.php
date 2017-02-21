@@ -17,7 +17,7 @@ class BusLineController extends Controller
      * @Rest\View(serializerGroups={"busline"}, statusCode=Response::HTTP_OK)
      * 
      */
-    public function getProjectsBusLinesAction(Request $request)
+    public function getProjectsBusLinesAction()
     {
         return $this->get('busline_service')->getBusLineList();
     }
@@ -28,7 +28,7 @@ class BusLineController extends Controller
      * @Rest\View(serializerGroups={"busline"}, statusCode=Response::HTTP_OK)
      * 
      */
-    public function getProjectsBusLinesNameAction($name, Request $request)
+    public function getProjectsBusLinesNameAction($name)
     {
         return $this->get('busline_service')->findByShortName($name);
     }
@@ -39,7 +39,7 @@ class BusLineController extends Controller
      * @Rest\View(serializerGroups={"busline"}, statusCode=Response::HTTP_OK)
      * 
      */
-    public function getProjectsBusLinesNameCommercialSenseAction($name, $sense, Request $request)
+    public function getProjectsBusLinesNameCommercialSenseAction($name, $sense)
     {
         return $this->get('busline_service')->findByShortNameAndCommercialSense($name, $sense);
     }
