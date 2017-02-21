@@ -102,6 +102,8 @@ The technologies used for this api application are:
 - Guzzle client
 - MongoDb
 - MySql
+- ElasticSearch
+- ElasticsearchDSL
 
 ## Postman
 

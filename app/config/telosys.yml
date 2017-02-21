@@ -7,6 +7,3 @@ parameters:
         max_handles: 500
         clients:
             default: { scheme: http, host: 127.0.0.1, port: 9200 }
-        logger:
-            file: "var/logs/elasticsearch.log"
-            name: "elasticsearch"

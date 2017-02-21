@@ -104,5 +104,17 @@ class BusLineSearchService
     public function getBusLineAll()
     {
         return $this->busLineQuery->getAll();
-    }    
+    }
+    
+    /**
+     *
+     * Sample using Query DSL library for Elasticsearch 
+     *
+     * @param string $content
+     *
+     */       
+    public function getExtendQueryToolsQueryString($content)
+    {
+        return $this->busLineQuery->getExtendQueryToolsQueryString($content);
+    }
 }

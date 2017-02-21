@@ -1,6 +1,6 @@
 == Application Route
 
-    Bus Line
+Bus Line
 
     app_telosys_project_check_getprojectspings                                                 GET      ANY      ANY    /api/platform/telosys/v1.0/projects/pings
   
@@ -10,7 +10,7 @@
     
     app_telosys_project_busline_getprojectsbuslinesnamecommercialsense                         GET      ANY      ANY    /api/platform/telosys/v1.0/projects/buslines/{name}/sense/{sense}
   
-    Client
+Client
   
     app_telosys_project_client_getprojectsclients                                              GET      ANY      ANY    /api/platform/telosys/v1.0/projects/clients
     
@@ -20,7 +20,7 @@
     
     app_telosys_project_client_putprojectsclients                                              PUT      ANY      ANY    /api/platform/telosys/v1.0/projects/clients/{id}
   
-    Search
+Search
   
     app_telosys_project_buslinesearch_getprojectssearchbuslinescode                            GET      ANY      ANY    /api/platform/telosys/v1.0/projects/search/buslines/{code}
     
@@ -29,3 +29,5 @@
     app_telosys_project_buslinesearch_getprojectssearchbuslinesglobalcontentalternativection   GET      ANY      ANY    /api/platform/telosys/v1.0/projects/search/buslines/global/{content}/alternative
     
     app_telosys_project_buslinesearch_getprojectssearchbuslines                                GET      ANY      ANY    /api/platform/telosys/v1.0/projects/search/buslines
+    
+    app_telosys_project_buslinesearch_getprojectssearchbuslinesquerytools                      GET      ANY      ANY    /api/platform/telosys/v1.0/projects/search/buslines/global/{content}/querytool    

@@ -39,9 +39,22 @@ class BusLineSearchController extends Controller
      * @Rest\View(statusCode=Response::HTTP_OK)
      * 
      */
-    public function getProjectsSearchBusLinesGlobalContentAlternativection($content)
+    public function getProjectsSearchBusLinesGlobalContentAlternativeAction($content)
     {
         return $this->get('busline_search_service')->getBusLineQueryString($content);
+    }
+    
+    /**
+     *
+     * Sample using Query DSL library for Elasticsearch 
+     * 
+     * @Rest\Get("/projects/search/buslines/global/{content}/querytool")
+     * @Rest\View(statusCode=Response::HTTP_OK)
+     * 
+     */
+    public function getProjectsSearchBusLinesQueryToolsAction($content)
+    {
+        return $this->get('busline_search_service')->getExtendQueryToolsQueryString($content);
     }
     
     /**

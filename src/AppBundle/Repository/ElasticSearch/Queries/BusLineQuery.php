@@ -5,6 +5,9 @@ namespace AppBundle\Repository\ElasticSearch\Queries;
 use AppBundle\Repository\ElasticSearch\ElasticSearchQueryBase;
 use Telosys\Domain\Repository\ElasticSearch\ElasticSearchQuery;
 
+use ONGR\ElasticsearchDSL\Query\FullText\QueryStringQuery;
+use ONGR\ElasticsearchDSL\Search;
+
 class BusLineQuery extends ElasticSearchQueryBase implements ElasticSearchQuery
 {
    	const NAME = "buslines";
@@ -115,6 +118,29 @@ class BusLineQuery extends ElasticSearchQueryBase implements ElasticSearchQuery
                     ]
                 ],
             ],
+        ];
+        
+        return $this->client->search($params);
+    }
+    
+    /**
+     *
+     * Sample using Query DSL library for Elasticsearch 
+     *
+     * @param string $content
+     * @return string
+     * 
+     */    
+    public function getExtendQueryToolsQueryString($content)
+    {
+        $queryStringQuery   = new QueryStringQuery($content);
+        $search             = new Search();
+        $search->addQuery($queryStringQuery);
+        
+        $params = [
+            'index' => $this->getName(),
+            'type'  => $this->getType(),
+            'body'  => $search->toArray(),
         ];
         
         return $this->client->search($params);
