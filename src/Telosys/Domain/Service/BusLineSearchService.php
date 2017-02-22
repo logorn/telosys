@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the Telosys package.
+ *
+ * Coded by MAILLET Hugues
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Telosys\Domain\Service;
 
 use Psr\Log\LoggerInterface;
@@ -9,6 +18,9 @@ use AppBundle\Repository\ElasticSearch\Indexes\BusLineIndex;
 use AppBundle\Repository\ElasticSearch\Queries\BusLineQuery;
 use \Telosys\Domain\Entity\BusLine;
 
+/**
+ * Class BusLineSearchService.
+ */ 
 class BusLineSearchService
 {
     /**
@@ -78,8 +90,43 @@ class BusLineSearchService
      */     
     public function getBusLineByCode($code)
     {
-        $response = $this->busLineQuery->getBusLineByCode($code);
-        return $response;
-        return $response['hits']['hits'];
+        return $this->busLineQuery->getBusLineByCode($code);
+    }
+    
+    /**
+     *
+     * @param string $content
+     *
+     */     
+    public function getBusLineMatchAll($content)
+    {
+        return $this->busLineQuery->getBusLineMatchAll($content);
+    }
+    
+    /**
+     *
+     * @param string $content
+     *
+     */     
+    public function getBusLineQueryString($content)
+    {    
+        return $this->busLineQuery->getBusLineQueryString($content);
+    }
+      
+    public function getBusLineAll()
+    {
+        return $this->busLineQuery->getAll();
+    }
+    
+    /**
+     *
+     * Sample using Query DSL library for Elasticsearch 
+     *
+     * @param string $content
+     *
+     */       
+    public function getExtendQueryToolsQueryString($content)
+    {
+        return $this->busLineQuery->getExtendQueryToolsQueryString($content);
     }
 }

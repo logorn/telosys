@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the Telosys package.
+ *
+ * Coded by MAILLET Hugues
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace AppBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
@@ -9,6 +18,9 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use AppBundle\Entity\BusLine;
 
+/**
+ * Class LoadElasticSearchCommand.
+ */
 class LoadElasticSearchCommand extends ContainerAwareCommand
 {
     /**
@@ -24,7 +36,10 @@ class LoadElasticSearchCommand extends ContainerAwareCommand
      *
      */
     protected $busLineRepository;
-    
+
+    /**
+     * {@inheritdoc}
+     */    
     protected function configure()
     {
         $this
@@ -37,7 +52,10 @@ class LoadElasticSearchCommand extends ContainerAwareCommand
                 "Simulates processing without insertion."
             );
     }
-    
+
+    /**
+     * {@inheritdoc}
+     */    
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $numberOfInsert     = 0;

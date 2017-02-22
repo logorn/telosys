@@ -1,0 +1,8 @@
+== Overview
+
+This is the official Telosys for Symfony App.
+
+This application has been designed to have a basis for the realization of a REST-type API application based on symfony..
+
+All methods closely match the REST API.
+

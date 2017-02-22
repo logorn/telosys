@@ -7,12 +7,3 @@ doctrine_mongodb:
     document_managers:
         default:
             auto_mapping: true
-            
-mongo_db_migrations:
-    collection_name: "migration_versions"
-    database_name: "%mongodb_database_name%"
-    dir_name: "%kernel.root_dir%/MongoMigrations"
-    script_dir_name: "%kernel.root_dir%/MongoScripts"
-    name: "Pulsar MongoDB Migrations"
-    namespace: "App\\MongoMigrations"
-

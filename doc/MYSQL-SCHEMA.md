@@ -4,6 +4,8 @@ A collection of views to help MySQL developer get insight in to telosys Database
 
 This Documentation show how tables are be defined.
 
+## bus_line
+
 Structures (1.1)
 
     mysql> desc bus_line;
@@ -28,3 +30,29 @@ Structures (1.1)
     +------------------------------------+--------------+------+-----+---------+----------------+
     
     14 rows in set (0.00 sec)
+
+## client
+
+Structures (2.1)
+
+    mysql> describe client;
+    
+    +-------------------------+--------------+------+-----+---------+----------------+
+    | Field                   | Type         | Null | Key | Default | Extra          |
+    +-------------------------+--------------+------+-----+---------+----------------+
+    | id                      | int(11)      | NO   | PRI | NULL    | auto_increment |
+    | initiation_date         | datetime     | YES  |     | NULL    |                |
+    | terminal                | int(11)      | YES  |     | NULL    |                |
+    | session                 | varchar(255) | YES  |     | NULL    |                |
+    | agent                   | varchar(255) | YES  |     | NULL    |                |
+    | card                    | varchar(255) | YES  |     | NULL    |                |
+    | carrier_number          | varchar(255) | YES  |     | NULL    |                |
+    | carrier_name            | varchar(255) | NO   |     | NULL    |                |
+    | carrier_first_name      | varchar(255) | NO   |     | NULL    |                |
+    | carrier_address         | varchar(255) | NO   |     | NULL    |                |
+    | carrier_postal_code     | varchar(255) | YES  |     | NULL    |                |
+    | carrier_town            | varchar(255) | YES  |     | NULL    |                |
+    | carrier_contract_number | varchar(255) | YES  |     | NULL    |                |
+    | transaction_id          | varchar(255) | YES  |     | NULL    |                |
+    +-------------------------+--------------+------+-----+---------+----------------+
+    14 rows in set (0.12 sec)

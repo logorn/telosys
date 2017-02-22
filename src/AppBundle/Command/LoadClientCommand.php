@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the Telosys package.
+ *
+ * Coded by MAILLET Hugues
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace AppBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
@@ -9,6 +18,9 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use AppBundle\Entity\Client;
 
+/**
+ * Class LoadClientCommand.
+ */
 class LoadClientCommand extends ContainerAwareCommand
 {
     /**
@@ -25,6 +37,9 @@ class LoadClientCommand extends ContainerAwareCommand
      */
     protected $isDryRun;    
     
+    /**
+     * {@inheritdoc}
+     */
     protected function configure()
     {
         $this
@@ -38,6 +53,9 @@ class LoadClientCommand extends ContainerAwareCommand
             );
     }
 
+    /**
+     * {@inheritdoc}
+     */    
     protected function execute(InputInterface $input, OutputInterface $output)
     {   
         $listBusLine        = [];
@@ -53,7 +71,9 @@ class LoadClientCommand extends ContainerAwareCommand
         $this->clientRepository= $em->getRepository("AppBundle\Entity\Client");
         
         $clientService      = $this->getContainer()->get('client_service');
-        $jsonIterator       = $this->loadJsonData();
+        $jsonIterator       = $this->parseJsonData();
+        
+        $output->writeln(sprintf("\n\n<info>Begin insert client%s.</info>", $asDryRunMessage));
         
         foreach ($jsonIterator as $key => $clientData) {
             if(is_array($clientData)) {
@@ -79,15 +99,26 @@ class LoadClientCommand extends ContainerAwareCommand
         $output->writeln(sprintf("Client inserted: %d", $numberOfInsert));
     }
     
-    protected function loadJsonData()
+    /**
+     *
+     * Parses json data from file
+     * 
+     * @return array
+     *
+     */
+    protected function parseJsonData()
     {
-        $content = file_get_contents($this->getContainer()->get('kernel')->getRootDir() . "/../data/clients.json");
+        try {
+            $content = file_get_contents($this->getContainer()->get('kernel')->getRootDir() . "/../data/clients.json");
+            
+            $jsonIterator = new \RecursiveIteratorIterator(
+                new \RecursiveArrayIterator(json_decode($content, TRUE)),
+                \RecursiveIteratorIterator::SELF_FIRST
+            );
+            return $jsonIterator;
         
-        $jsonIterator = new \RecursiveIteratorIterator(
-            new \RecursiveArrayIterator(json_decode($content, TRUE)),
-            \RecursiveIteratorIterator::SELF_FIRST
-        );
-
-        return $jsonIterator;
+        } catch (\Exception $e) {
+            continue;
+        }
     }
 }
