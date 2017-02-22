@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace AppBundle;
+namespace Telosys\Domain\Repository\ElasticSearch\Indexes;
 
-use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Telosys\Domain\Repository\ElasticSearch\ElasticSearchIndex;
 
 /**
- * Class AppBundle.
- */
-class AppBundle extends Bundle
+ * Class BusLineIndex.
+ */        
+interface BusLineIndex extends ElasticSearchIndex
 {
     
 }

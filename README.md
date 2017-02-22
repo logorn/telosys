@@ -1,4 +1,4 @@
-Scaffolding with Telosys
+TFS: Telosys for Symfony, a scaffolding
 ================================================================================
 
 A Pragmatic scaffolding approach to build php api back-end with Symfony based on Telosys approach.
@@ -8,14 +8,38 @@ Goal
 
 The project goal is to automatically deploy the configuration needed for an operational Symfony application based on php.
 
-Software Requirements
+TFS is a fully-functional Symfony application that you can use as the skeleton for your new applications.
+
+What's inside?
 ================================================================================
 
-    PHP 7.0 - a language and runtime.
-    Composer - a PHP dependency manager.
-    MySQL 5 - a relational database.
-    MongoDB 2.4.9 - a document (NoSQL) database.
-    Elasticsearch 2.0 - a search service.
+TFS is configured with the following defaults:
+
+    An AppBundle you can use to start coding;
+    Twig as the only configured template engine;
+    Symfony 3 as main application framework.
+    Doctrine Orm 2;
+    Doctrine Odm;
+    Jms serializer;
+    Fos rest-bundle;
+    Nelmio cors;
+    Guzzle client;
+    MongoDb;
+    MySql;
+    ElasticSearch Service;
+    ElasticsearchDSL;
+    Annotations enabled for everything.
+
+Software Requirements
+================================================================================
+    
+| Program              | Version    | Description
+|----------------------|------------|------------------------------------------------------
+| PHP                  | 7.0        | a language and runtime.
+| Composer             | 1.3.2      | a PHP dependency manager
+| MySQL                | 5          | a relational database.
+| MongoDB              | 2.4.9      | a document (NoSQL) database.
+| Elasticsearch        | 2.4.4      | a search service.
 
 GETTING STARTED
 ================================================================================
@@ -98,22 +122,6 @@ Response body with http:
         }
     ]
 
-## Technologies
-
-The technologies used for this api application are:
-
-- Symfony 3 as main application framework.
-- Doctrine Orm 2.
-- Doctrine Odm
-- Jms serializer
-- Fos rest-bundle
-- Nelmio cors
-- Guzzle client
-- MongoDb
-- MySql
-- ElasticSearch
-- ElasticsearchDSL
-
 ## Documentation
 
 For online documentation of the appliation click here. All docs pages are located in doc.
@@ -125,6 +133,14 @@ You have API calls by operating postman.
 ## Update Schema and populate data
 
 No need to detail them because known of any good developer of symfony.
+
+## Roadmap
+
+Telosys for symfony currently needs:
+
+    Using geospatial data for customers.
+    Tests that mock api call (behat).
+    Tests for core components (phpunit).
 
 ## Troubleshooting
 

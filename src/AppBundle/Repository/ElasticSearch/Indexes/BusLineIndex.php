@@ -12,12 +12,12 @@
 namespace AppBundle\Repository\ElasticSearch\Indexes;
 
 use AppBundle\Repository\ElasticSearch\ElasticSearchIndexBase;
-use Telosys\Domain\Repository\ElasticSearch\ElasticSearchIndex;
+use Telosys\Domain\Repository\ElasticSearch\Indexes;
 
 /**
  * Class BusLineIndex.
  */
-class BusLineIndex extends ElasticSearchIndexBase implements ElasticSearchIndex
+class BusLineIndex extends ElasticSearchIndexBase implements Indexes\BusLineIndex
 {
 	const NAME = "buslines";
 	

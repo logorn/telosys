@@ -12,7 +12,7 @@
 namespace AppBundle\Repository\ElasticSearch\Queries;
 
 use AppBundle\Repository\ElasticSearch\ElasticSearchQueryBase;
-use Telosys\Domain\Repository\ElasticSearch\ElasticSearchQuery;
+use Telosys\Domain\Repository\ElasticSearch\Queries;
 
 use ONGR\ElasticsearchDSL\Query\FullText\QueryStringQuery;
 use ONGR\ElasticsearchDSL\Search;
@@ -20,7 +20,7 @@ use ONGR\ElasticsearchDSL\Search;
 /**
  * Class BusLineQuery.
  */
-class BusLineQuery extends ElasticSearchQueryBase implements ElasticSearchQuery
+class BusLineQuery extends ElasticSearchQueryBase implements Queries\BusLineQuery
 {
    	const NAME = "buslines";
 	

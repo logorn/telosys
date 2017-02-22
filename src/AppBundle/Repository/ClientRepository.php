@@ -22,8 +22,8 @@ class ClientRepository extends EntityRepository implements Repository\ClientRepo
     /**
      *
      * @return \Telosys\Domain\Entity\Client[]
-     * 
-     */    
+     *
+     */  
     public function findAll()
     {
         $builder = $this->createQueryBuilder('c');
@@ -47,9 +47,9 @@ class ClientRepository extends EntityRepository implements Repository\ClientRepo
     }
     
     /**
-     * 
+     *
      * @param integer $id
-     * 
+     *
      */
     public function deleteById($id)
     {

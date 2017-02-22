@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace AppBundle;
+namespace Telosys\Domain\Repository\ElasticSearch\Storages;
 
-use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Telosys\Domain\Repository\ElasticSearch\ElasticSearchStorage;
 
 /**
- * Class AppBundle.
- */
-class AppBundle extends Bundle
+ * Class BusLineStorage.
+ */        
+interface BusLineStorage extends ElasticSearchStorage
 {
     
 }

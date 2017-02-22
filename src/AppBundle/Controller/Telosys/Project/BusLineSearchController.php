@@ -26,7 +26,7 @@ class BusLineSearchController extends Controller
      *
      * @Rest\Get("/projects/search/buslines/{code}")
      * @Rest\View(statusCode=Response::HTTP_OK)
-     * 
+     *
      */
     public function getProjectsSearchBusLinesCodeAction($code)
     {
@@ -37,7 +37,7 @@ class BusLineSearchController extends Controller
      *
      * @Rest\Get("/projects/search/buslines/global/{content}")
      * @Rest\View(statusCode=Response::HTTP_OK)
-     * 
+     *
      */
     public function getProjectsSearchBusLinesGlobalContentAction($content)
     {
@@ -48,7 +48,7 @@ class BusLineSearchController extends Controller
      *
      * @Rest\Get("/projects/search/buslines/global/{content}/alternative")
      * @Rest\View(statusCode=Response::HTTP_OK)
-     * 
+     *
      */
     public function getProjectsSearchBusLinesGlobalContentAlternativeAction($content)
     {
@@ -57,11 +57,11 @@ class BusLineSearchController extends Controller
     
     /**
      *
-     * Sample using Query DSL library for Elasticsearch 
-     * 
+     * Sample using Query DSL library for Elasticsearch
+     *
      * @Rest\Get("/projects/search/buslines/global/{content}/querytool")
      * @Rest\View(statusCode=Response::HTTP_OK)
-     * 
+     *
      */
     public function getProjectsSearchBusLinesQueryToolsAction($content)
     {
@@ -72,7 +72,7 @@ class BusLineSearchController extends Controller
      *
      * @Rest\Get("/projects/search/buslines")
      * @Rest\View(statusCode=Response::HTTP_OK)
-     * 
+     *
      */
     public function getProjectsSearchBusLinesAction()
     {

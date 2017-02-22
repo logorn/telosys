@@ -35,7 +35,7 @@ class LoadClientCommand extends ContainerAwareCommand
      * @var bool
      *
      */
-    protected $isDryRun;    
+    protected $isDryRun;
     
     /**
      * {@inheritdoc}
@@ -55,9 +55,9 @@ class LoadClientCommand extends ContainerAwareCommand
 
     /**
      * {@inheritdoc}
-     */    
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
-    {   
+    {
         $listBusLine        = [];
         $numberOfInsert     = 0;
         $asDryRunMessage    = "";
@@ -76,7 +76,7 @@ class LoadClientCommand extends ContainerAwareCommand
         $output->writeln(sprintf("\n\n<info>Begin insert client%s.</info>", $asDryRunMessage));
         
         foreach ($jsonIterator as $key => $clientData) {
-            if(is_array($clientData)) {
+            if (is_array($clientData)) {
                 $client = new Client();
                 $client->setCarrierNumber($clientData['carrierNumber'])
                     ->setCarrierFirstName($clientData['carrierFirstName'])
@@ -102,7 +102,7 @@ class LoadClientCommand extends ContainerAwareCommand
     /**
      *
      * Parses json data from file
-     * 
+     *
      * @return array
      *
      */
@@ -112,13 +112,12 @@ class LoadClientCommand extends ContainerAwareCommand
             $content = file_get_contents($this->getContainer()->get('kernel')->getRootDir() . "/../data/clients.json");
             
             $jsonIterator = new \RecursiveIteratorIterator(
-                new \RecursiveArrayIterator(json_decode($content, TRUE)),
+                new \RecursiveArrayIterator(json_decode($content, true)),
                 \RecursiveIteratorIterator::SELF_FIRST
             );
             return $jsonIterator;
-        
         } catch (\Exception $e) {
-            continue;
+            // continue
         }
     }
 }

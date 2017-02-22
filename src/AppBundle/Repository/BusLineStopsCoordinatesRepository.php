@@ -22,7 +22,7 @@ class BusLineStopsCoordinatesRepository extends DocumentRepository implements Re
     /**
      *
      * @return \Telosys\Domain\Document\BusLineStopsCoordinates[]
-     * 
+     *
      */
     public function findAll()
     {

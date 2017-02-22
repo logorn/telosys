@@ -16,5 +16,15 @@ namespace Telosys\Domain\Repository\ElasticSearch;
  */ 
 interface ElasticSearchQuery
 {
-    
+    /**
+     *
+     * @return string
+     */		
+	public function getName();
+
+    /**
+     *
+     * @return string
+     */		
+	public function getType();
 }

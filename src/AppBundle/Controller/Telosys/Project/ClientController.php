@@ -29,7 +29,7 @@ class ClientController extends Controller
      *
      * @Rest\Get("/projects/clients")
      * @Rest\View(serializerGroups={"client"}, statusCode=Response::HTTP_OK)
-     * 
+     *
      */
     public function getProjectsClientsAction()
     {

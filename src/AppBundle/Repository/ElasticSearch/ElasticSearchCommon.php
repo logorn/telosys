@@ -32,6 +32,6 @@ class ElasticSearchCommon
      */
     public function __construct($client)
     {
-        $this->client = $client->getClient();      
+        $this->client = $client->getClient();
     }
 }

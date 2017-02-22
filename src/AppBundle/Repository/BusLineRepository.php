@@ -22,8 +22,8 @@ class BusLineRepository extends EntityRepository implements Repository\BusLineRe
     /**
      *
      * @return \Telosys\Domain\Entity\BusLine[]
-     * 
-     */    
+     *
+     */
     public function findAll()
     {
         $builder = $this->createQueryBuilder('b');
@@ -51,7 +51,7 @@ class BusLineRepository extends EntityRepository implements Repository\BusLineRe
      * @param string $name
      *
      * @return \Telosys\Domain\Entity\BusLine
-     */       
+     */  
     public function findByShortName($name)
     {
         $builder = $this->createQueryBuilder('b');
@@ -72,7 +72,7 @@ class BusLineRepository extends EntityRepository implements Repository\BusLineRe
      * @param string $sense
      *
      * @return \Telosys\Domain\Entity\BusLine
-     */       
+     */
     public function findByShortNameAndCommercialSense($name, $sense)
     {
         $builder = $this->createQueryBuilder('b');

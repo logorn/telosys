@@ -39,7 +39,7 @@ class LoadElasticSearchCommand extends ContainerAwareCommand
 
     /**
      * {@inheritdoc}
-     */    
+     */
     protected function configure()
     {
         $this
@@ -55,7 +55,7 @@ class LoadElasticSearchCommand extends ContainerAwareCommand
 
     /**
      * {@inheritdoc}
-     */    
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $numberOfInsert     = 0;
@@ -78,7 +78,7 @@ class LoadElasticSearchCommand extends ContainerAwareCommand
         
         $output->writeln(sprintf("\n\n<info>Begin insert bus line%s.</info>", $asDryRunMessage));
         
-        foreach($results as $result) {
+        foreach ($results as $result) {
             if (!$this->isDryRun) {
                 $busLineSearchService->saveDocument($result);
             }

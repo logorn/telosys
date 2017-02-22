@@ -36,11 +36,11 @@ class PullBusLineCommand extends ContainerAwareCommand
      * @var bool
      *
      */
-    protected $isDryRun;    
+    protected $isDryRun;
 
     /**
      * {@inheritdoc}
-     */    
+     */
     protected function configure()
     {
         $this
@@ -56,9 +56,9 @@ class PullBusLineCommand extends ContainerAwareCommand
 
     /**
      * {@inheritdoc}
-     */    
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
-    {   
+    {
         $listBusLine        = [];
         $numberOfInsert     = 0;
         $asDryRunMessage    = "";
@@ -75,14 +75,13 @@ class PullBusLineCommand extends ContainerAwareCommand
         $busLineService     = $this->getContainer()->get('busline_service');
         $listBusLineFromApi = $busLineService->pullBuslineData();
         
-        foreach($busLineData as $result) {
+        foreach ($busLineData as $result) {
             $listBusLine[] = $result->getCode();
         }
         
         $output->writeln(sprintf("\n\n<info>Begin insert bus line%s.</info>", $asDryRunMessage));
         
-        foreach ($listBusLineFromApi->records as $result)
-        {
+        foreach ($listBusLineFromApi->records as $result) {
             // orm
             $busLine = $this->getBuslineEntity($result);
             // odm
@@ -107,7 +106,7 @@ class PullBusLineCommand extends ContainerAwareCommand
     /**
      * @param stdClass $result
      * @return BusLine $busLine
-     */    
+     */
     protected function getBuslineEntity($result)
     {
         // entity
@@ -169,7 +168,7 @@ class PullBusLineCommand extends ContainerAwareCommand
     /**
      *
      * @return Doctrine\ODM\MongoDB\DocumentManager
-     * 
+     *
      */
     protected function getDoctrineODMContainer()
     {
