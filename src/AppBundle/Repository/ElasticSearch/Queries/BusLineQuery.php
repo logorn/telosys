@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the Telosys package.
+ *
+ * Coded by MAILLET Hugues
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace AppBundle\Repository\ElasticSearch\Queries;
 
 use AppBundle\Repository\ElasticSearch\ElasticSearchQueryBase;
@@ -8,6 +17,9 @@ use Telosys\Domain\Repository\ElasticSearch\ElasticSearchQuery;
 use ONGR\ElasticsearchDSL\Query\FullText\QueryStringQuery;
 use ONGR\ElasticsearchDSL\Search;
 
+/**
+ * Class BusLineQuery.
+ */
 class BusLineQuery extends ElasticSearchQueryBase implements ElasticSearchQuery
 {
    	const NAME = "buslines";

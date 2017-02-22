@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the Telosys package.
+ *
+ * Coded by MAILLET Hugues
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Telosys\Domain\Service;
 
 use Psr\Log\LoggerInterface;
@@ -9,6 +18,9 @@ use AppBundle\Repository\ElasticSearch\Indexes\BusLineIndex;
 use AppBundle\Repository\ElasticSearch\Queries\BusLineQuery;
 use \Telosys\Domain\Entity\BusLine;
 
+/**
+ * Class BusLineSearchService.
+ */ 
 class BusLineSearchService
 {
     /**

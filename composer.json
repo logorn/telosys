@@ -2,7 +2,15 @@
     "name": "Telosys",
     "license": "MIT",
     "type": "project",
-    "description": "Telosys for symfony",
+    "keywords": ["telosys", "symfony 3", "elasticsearch", "php", "orm", "odm", "doctrine"],
+    "description": "Telosys for symfony is a template for REST API application",
+    "homepage": "https://github.com/logorn/telosys",
+    "authors": [
+        {
+            "name": "Hugues MAILLET",
+            "homepage": "https://github.com/logorn"
+        }
+    ],
     "autoload": {
         "psr-4": { "": "src/" },
         "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
@@ -11,7 +19,7 @@
         "psr-4": { "Tests\\": "tests/" }
     },
     "require": {
-        "php": ">=5.5.9",
+        "php": "^7.0",
         "symfony/symfony": "3.2.*",
         "doctrine/orm": "^2.5",
         "doctrine/doctrine-bundle": "^1.6",

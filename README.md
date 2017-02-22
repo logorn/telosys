@@ -8,6 +8,15 @@ Goal
 
 The project goal is to automatically deploy the configuration needed for an operational Symfony application based on php.
 
+Software Requirements
+================================================================================
+
+    PHP 7.0 - a language and runtime.
+    Composer - a PHP dependency manager.
+    MySQL 5 - a relational database.
+    MongoDB 2.4.9 - a document (NoSQL) database.
+    Elasticsearch 2.0 - a search service.
+
 GETTING STARTED
 ================================================================================
 
@@ -105,6 +114,10 @@ The technologies used for this api application are:
 - ElasticSearch
 - ElasticsearchDSL
 
+## Documentation
+
+For online documentation of the appliation click here. All docs pages are located in doc.
+
 ## Postman
 
 You have API calls by operating postman.
@@ -113,6 +126,14 @@ You have API calls by operating postman.
 
 No need to detail them because known of any good developer of symfony.
 
+## Troubleshooting
+
+If you face any issue or difficulty by implementing this application, do not be afraid to create an issue with bug or question.
+
 ## Author Information
 
 This application was created in 2017 by Hugues MAILLET, inspired by the work of many.
+
+## License
+
+This Application is covered by the MIT license. Please see the complete license in the application LICENSE file.
