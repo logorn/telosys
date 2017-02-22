@@ -25,7 +25,10 @@ class PullBusLineCommand extends ContainerAwareCommand
      *
      */
     protected $isDryRun;    
-    
+
+    /**
+     * {@inheritdoc}
+     */    
     protected function configure()
     {
         $this
@@ -39,6 +42,9 @@ class PullBusLineCommand extends ContainerAwareCommand
             );
     }
 
+    /**
+     * {@inheritdoc}
+     */    
     protected function execute(InputInterface $input, OutputInterface $output)
     {   
         $listBusLine        = [];

@@ -28,3 +28,8 @@ Optional
 Doctrine
 
 If you want to use Doctrine, you will need to have PDO installed. Additionally, you need to have the PDO driver installed for the database server you want to use.
+
+Project
+
+    The application uses new features of php 7.
+    PHP code needs to be a minimum version of PHP 7.x

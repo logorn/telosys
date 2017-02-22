@@ -24,7 +24,10 @@ class LoadElasticSearchCommand extends ContainerAwareCommand
      *
      */
     protected $busLineRepository;
-    
+
+    /**
+     * {@inheritdoc}
+     */    
     protected function configure()
     {
         $this
@@ -37,7 +40,10 @@ class LoadElasticSearchCommand extends ContainerAwareCommand
                 "Simulates processing without insertion."
             );
     }
-    
+
+    /**
+     * {@inheritdoc}
+     */    
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $numberOfInsert     = 0;

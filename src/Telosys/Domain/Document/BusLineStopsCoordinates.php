@@ -168,4 +168,15 @@ class BusLineStopsCoordinates
         $this->geometry = $geometry;
         return $this;
     }
+    
+    /**
+     *
+     * @return array 
+     *
+     */    
+    public function toArray()
+    {
+        $toArray = get_object_vars($this);
+        return $toArray;
+    }
 }

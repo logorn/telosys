@@ -13,7 +13,7 @@ class BusLineStopsCoordinatesRepository extends DocumentRepository implements Re
      */
     public function findAll()
     {
-        return $this->createQueryBuilder("BusStopsCoordinates")
+        return $this->createQueryBuilder("BusLineStopsCoordinates")
             ->hydrate(false)
             ->getQuery()
             ->execute();

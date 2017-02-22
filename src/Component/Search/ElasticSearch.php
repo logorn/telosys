@@ -71,15 +71,5 @@ class ElasticSearch
                         ->build();
         }
         return self::$client;
-    }
-    
-    /**
-     *
-     * @return array
-     *
-     */
-    public function getAllMapping()
-    {
-        return $this->getInstance()->indices()->getMapping();
-    }    
+    }   
 }
