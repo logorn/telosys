@@ -12,10 +12,10 @@ Software Requirements
 ================================================================================
 
     PHP 7.0 - a language and runtime.
-    Composer - a PHP dependency manager.
+    Composer 1.3.2 - a PHP dependency manager.
     MySQL 5 - a relational database.
     MongoDB 2.4.9 - a document (NoSQL) database.
-    Elasticsearch 2.0 - a search service.
+    Elasticsearch 2.4.4 - a search service.
 
 GETTING STARTED
 ================================================================================
